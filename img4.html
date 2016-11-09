@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> A Winter Book</title>
+    <script src="https://use.fontawesome.com/2e8038ffaa.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="project.css">
+  </head>
+<body>
+     <script type="text/javascript">
+
+    var clicks = 0;
+    var clicks2 = 0;
+    var clicks3 = 0;
+    function like1() {
+        clicks += 1;
+        document.getElementById("r1").innerHTML = clicks;
+    };
+    function like2() {
+        clicks2 += 1;
+        document.getElementById("r2").innerHTML = clicks2;
+    };
+    function like3() {
+        clicks3 += 1;
+        document.getElementById("r3").innerHTML = clicks3;
+    };
+    </script>
+    <div><a href="project.php"><img src="Bookfarms_logo.jpg" alt="logo" height=100 width =500></a>
+      <div class="loginform" >
+        
+<pre>
+
+</pre>
+           
+          
+          
+         </div>
+      
+      </form>
+
+    </div>
+    <ul id="home">
+  <li><a class="m1" href="project.php">Home</a></li>
+  <li><a class="m1" href="featured.php">Featured</a></li>
+  <li><a class="m1" href="about_us.html">About Us</a></li>
+  <li class="dropdown m1">
+<a href="search.php" class="drop-button">Search by</a>
+    <div class="dropmenu">
+      <a href="search.php">Genre</a>
+      <a href="search.php">Popularity</a>
+      <a href="search.php">Name</a>
+        <li><a class="m1" href="map4.php">Book Stores</a></li>
+ 
+    </div>
+  </li>
+  <li class="button dropdown">
+    <a href="#" class=" icon"> <i class="material-icons" >perm_identity</i> </a>
+    <div class="dropmenu d1 m1">
+      <a href="feedback.html" >Feedback</a>
+      <a href="#">Log Out</a>
+      <a href="#">Account Settings</a>
+    </div>
+  </li>
+</ul>
+<div class="sidespace">
+	<img src="img4.jpg" height=350 width =200 class="b_img">
+		<h3 class="head">A WINTER BOOK
+	</h3>
+	<br>
+	<br>
+	<br>
+	<p>Following the widely acclaimed and bestselling The Summer Book, here is a Winter Book collection of some of Tove Jansson’s best loved and most famous stories. Drawn from youth and older age, and spanning most of the twentieth century, this newly translated selection provides a thrilling showcase of the great Finnish writer’s prose, scattered with insights and home truths.
+	</p>
+
+	<p><span class="internalheads">About the Author:</span><br>
+Tove Jansson was born and died in Helsinki, Finland. As a Finnish citizen whose mother tongue was Swedish, she was part of the Swedish-speaking Finns minority. Thus, all her books were originally written in Swedish.Tove Jansson wrote and illustrated her first Moomin book, The Moomins and the Great Flood (1945), during World War II. She said later that the war had depressed her, and she had wanted to write something naive and innocent. Besides the Moomin novels and short stories, Tove Jansson also wrote and illustrated four original and highly popular picture books.</p>
+		<p>
+		Paperback, 208 pages
+	</p>
+	<form>
+  <button type="button" id="clicks" class="fbutton" onclick="like1()">Read</button>
+  <p class= "counter" id="r1" name="ask" style="margin-top:3px;" >0</p>
+  <br>
+  <button type="button" id="clicks" class="fbutton" onclick="like2()">Want to Read</button>
+  <p class= "counter" id="r2" name="ask" style="margin-top:3px;" >0</p>
+  <br>
+  <button type="button" id="clicks" class="fbutton" onclick="like3()" style="margin-left:240px;">Currently Reading</button>
+  <p class= "counter" id="r3" name="ask" style="margin-top:3px;" >0</p>
+
+</form>
+<div style="padding-left:6%;padding-top:10px;">
+<input type="button" class="fbutton" onclick="location.href='http://www.amazon.in/Winter-Book-Selected-Stories/dp/0954899520?ie=UTF8&*Version*=1&*entries*=0';" value="Buy Now" />&nbsp;&nbsp;<i class="fa fa-amazon" aria-hidden="true" style="fontsize:20px;"></i>
+</div>
+
+</div>
+<div id="comment_wrapper">
+<div style="padding-left:6%;padding-top:10px;">
+<button class = "fbutton" onclick="add(this)" >Add a Review</button></div>
+<div>
+<script>
+  var i = 0;
+  var j =0;
+  function add(){  
+    var maindiv = document.createElement("div");
+    maindiv.setAttribute("class","div1");
+    document.getElementById("comment_wrapper").appendChild(maindiv);
+    var tb = document.createElement("textarea");
+    tb.setAttribute("style","width:80%;position:relative;margin-left:6%;margin-top:5px;");
+    tb.style.border= "2px solid dark grey";
+    maindiv.appendChild(tb);
+    var btn=document.createElement("input")
+    btn.setAttribute("style","display:block;");
+    btn.setAttribute("type","submit")
+    btn.setAttribute("value","submit");
+    btn.setAttribute("onclick","save(this)");
+    btn.setAttribute("class","fbutton_submit");
+    maindiv.appendChild(btn);
+    
+  }
+  function save(x){
+    
+    var mdiv=x.parentNode
+    var tip = x.parentNode.children[0];
+    text=tip.value
+    while(mdiv.firstChild)
+      mdiv.removeChild(mdiv.firstChild)
+     mdiv.setAttribute("style","border-top:1px solid grey;margin-top:10px;");
+    mdiv.setAttribute("class","text_wrapper_comment");
+    var tb=document.createElement("h4")
+    tb.textContent = text;
+    tb.setAttribute("class","text_wrapper_comment1")
+    mdiv.appendChild(tb)
+    var btn=document.createElement("input")
+    btn.setAttribute("type","submit")
+    btn.setAttribute("value","upvote");
+    btn.setAttribute("onclick","up(this)");
+    btn.setAttribute("class","fbutton_submit");
+    mdiv.appendChild(btn);
+    var btn2=document.createElement("input")
+    btn2.setAttribute("type","submit")
+    btn2.setAttribute("value","downvote");
+    btn2.setAttribute("onclick","down(this)");
+    btn2.setAttribute("class","fbutton_submit");
+    mdiv.appendChild(btn2);
+   
+
+    }
+    function up(x){
+      i++;
+      x.setAttribute("value","upvotes  "+i);}
+    function down(x){
+      j++;
+      x.setAttribute("value","downvotes  "+j);}
+    
+    
+
+  </script>
+</body>
+</html>

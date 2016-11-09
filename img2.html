@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> A Clockwork Orange</title>
+    <script src="https://use.fontawesome.com/2e8038ffaa.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="project.css">
+  </head>
+  <body>
+     <script type="text/javascript">
+
+    var clicks = 0;
+    var clicks2 = 0;
+    var clicks3 = 0;
+    function like1() {
+        clicks += 1;
+        document.getElementById("r1").innerHTML = clicks;
+    };
+    function like2() {
+        clicks2 += 1;
+        document.getElementById("r2").innerHTML = clicks2;
+    };
+    function like3() {
+        clicks3 += 1;
+        document.getElementById("r3").innerHTML = clicks3;
+    };
+    </script>
+    <div><a href="project.php"><img src="Bookfarms_logo.jpg" alt="logo" height=100 width =500></a>
+      <div class="loginform" >
+        
+<pre>
+
+</pre>
+           
+          
+          
+         </div>
+      
+      </form>
+
+    </div>
+    <ul id="home">
+  <li><a class="m1" href="project.php">Home</a></li>
+  <li><a class="m1" href="featured.php">Featured</a></li>
+  <li><a class="m1" href="about_us.html">About Us</a></li>
+  <li class="dropdown m1">
+<a href="search.php" class="drop-button">Search by</a>
+    <div class="dropmenu">
+      <a href="search.php">Genre</a>
+      <a href="search.php">Popularity</a>
+      <a href="search.php">Name</a>
+        <li><a class="m1" href="map4.php">Book Stores</a></li>
+ 
+    </div>
+  </li>
+  <li class="button dropdown">
+    <a href="#" class=" icon"> <i class="material-icons" >perm_identity</i> </a>
+    <div class="dropmenu d1 m1">
+      <a href="feedback.html" >Feedback</a>
+      <a href="#">Log Out</a>
+      <a href="#">Account Settings</a>
+    </div>
+  </li>
+</ul>
+<div class="sidespace">
+	<img src="img2.jpg" height=350 width =200 class="b_img">
+		<h3 class="head">A Clockwork Orange
+	</h3>
+	<br>
+	<br>
+	<br>
+	<p>A vicious fifteen-year-old "droog" is the central character of this 1963 classic, whose stark terror was captured in Stanley Kubrick's magnificent film of the same title. In Anthony Burgess's nightmare vision of the future, where criminals take over after dark, the story is told by the central character, Alex, who talks in a brutal invented slang that brilliantly renders his and his friends' social pathology. A Clockwork Orange is a frightening fable about good and evil, and the meaning of human freedom. When the state undertakes to reform Alex—to "redeem" him—the novel asks, "At what cost?"
+	</p>
+
+	<p><span class="internalheads">About the Author:</span><br>
+Anthony Burgess was a British novelist, critic and composer. He was also a librettist, poet, playwright, screenwriter, essayist, travel writer, broadcaster, translator, linguist and educationalist. His fiction includes the Malayan trilogy (The Long Day Wanes) on the dying days of Britain's empire in the East.</p>
+		<p>
+		Paperback, 192 pages
+	</p>
+	<form>
+  <button type="button" id="clicks" class="fbutton" onclick="like1()">Read</button>
+  <p class= "counter" id="r1" name="ask" style="margin-top:3px;" >0</p>
+  <br>
+  <button type="button" id="clicks" class="fbutton" onclick="like2()">Want to Read</button>
+  <p class= "counter" id="r2" name="ask" style="margin-top:3px;" >0</p>
+  <br>
+  <button type="button" id="clicks" class="fbutton" onclick="like3()">Currently Reading</button>
+  <p class= "counter" id="r3" name="ask" style="margin-top:3px;" >0</p>
+  <br>
+</form>
+<br>
+
+<div style="padding-left:6%;padding-top:10px;">
+<input type="button" class="fbutton" onclick="location.href='http://www.amazon.in/Clockwork-Orange-Anthony-Burgess/dp/0393089134/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1472921740&sr=8-1';" value="Buy Now" />&nbsp;&nbsp;<i class="fa fa-amazon" aria-hidden="true" style="fontsize:20px;"></i>
+</div>
+
+</div>
+<div id="comment_wrapper">
+<div style="padding-left:6%;padding-top:10px;">
+<button class = "fbutton" onclick="add(this)" >Add a Review</button></div>
+<div>
+<script>
+  var i = 0;
+  var j =0;
+  function add(){  
+    var maindiv = document.createElement("div");
+    maindiv.setAttribute("class","div1");
+    document.getElementById("comment_wrapper").appendChild(maindiv);
+    var tb = document.createElement("textarea");
+    tb.setAttribute("style","width:80%;position:relative;margin-left:6%;margin-top:5px;");
+    tb.style.border= "2px solid dark grey";
+    maindiv.appendChild(tb);
+    var btn=document.createElement("input")
+    btn.setAttribute("style","display:block;");
+    btn.setAttribute("type","submit")
+    btn.setAttribute("value","submit");
+    btn.setAttribute("onclick","save(this)");
+    btn.setAttribute("class","fbutton_submit");
+    maindiv.appendChild(btn);
+    
+  }
+  function save(x){
+    
+    var mdiv=x.parentNode
+    var tip = x.parentNode.children[0];
+    text=tip.value
+    while(mdiv.firstChild)
+      mdiv.removeChild(mdiv.firstChild)
+     mdiv.setAttribute("style","border-top:1px solid grey;margin-top:10px;");
+    mdiv.setAttribute("class","text_wrapper_comment");
+    var tb=document.createElement("h4")
+    tb.textContent = text;
+    tb.setAttribute("class","text_wrapper_comment1")
+    mdiv.appendChild(tb)
+    var btn=document.createElement("input")
+    btn.setAttribute("type","submit")
+    btn.setAttribute("value","upvote");
+    btn.setAttribute("onclick","up(this)");
+    btn.setAttribute("class","fbutton_submit");
+    mdiv.appendChild(btn);
+    var btn2=document.createElement("input")
+    btn2.setAttribute("type","submit")
+    btn2.setAttribute("value","downvote");
+    btn2.setAttribute("onclick","down(this)");
+    btn2.setAttribute("class","fbutton_submit");
+    mdiv.appendChild(btn2);
+   
+
+    }
+    function up(x){
+      i++;
+      x.setAttribute("value","upvotes  "+i);}
+    function down(x){
+      j++;
+      x.setAttribute("value","downvotes  "+j);}
+    
+    
+
+  </script>
+</body>
+</html>
