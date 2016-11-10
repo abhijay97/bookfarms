@@ -415,6 +415,31 @@ map:hover{background-color: #f1f1f1;}
     transition:0.2s ease-in-out;
     transform:scale(1.1);
 
+    
+    
+.buy {
+    position: relative;
+    width: 25%;
+    height: 40px;
+    margin-left: 0%;
+    border-radius: 8px;
+    background-color:white;
+}
+
+.bsbutton {
+    vertical-align:middle;
+    margin-right:5%;
+    height:40px;
+    width:200px;
+    font-size:20px;
+    float:right;
+}
+
+
+.onsalebooks {
+    width:100%;: 
+    border: 1px solid darkgreen;
+}
 }
 .text_wrapper_comment{width:80%;position:relative;margin-left:6%;margin-top:5px;}
 .text_wrapper_comment1{width:80%;position:relative;margin-top:5px;}
